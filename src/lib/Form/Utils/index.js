@@ -24,10 +24,15 @@ function generateStateBindings (state, {
   stateChangeHandler = noop
 } = {}) {
   return {
-    value: formatValue(getNestedObject(state, keys)),
+    value: formatValue(getNestedObject(state, ['_value', ...keys])),
     defaultValue,
+    validity: getNestedObject(state, ['_validity', ...keys]),
     onChange: (value) => {
-      const newState = updateNestedObject(state, keys, formatChange(value))
+      const newState = updateNestedObject(state, ['_value', ...keys], formatChange(value))
+      stateChangeHandler.call(this, newState)
+    },
+    onValidation: (validity) => {
+      const newState = updateNestedObject(state, ['_validity', ...keys], formatChange(validity))
       stateChangeHandler.call(this, newState)
     }
   }

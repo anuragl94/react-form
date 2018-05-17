@@ -10,6 +10,7 @@ function getNestedObject (root, [...keys]) {
 }
 
 function updateNestedObject (root, [...keys], value) {
+  // TODO: Return a clone of root instead of modifying the original one
   if (!keys.length) {
     return value
   }
@@ -18,7 +19,7 @@ function updateNestedObject (root, [...keys], value) {
   }
   const key = keys.shift()
   if (key && (root instanceof Object)) {
-    return Object.assign({}, root, {
+    return Object.assign(root, {
       [key]: updateNestedObject(root[key], keys, value)
     })
   }

@@ -54,18 +54,26 @@ form input {
   font-size: inherit;
   font-family: inherit;
   font-weight: 300;
-  border: 1px solid #dfdfdf;
+  border: 2px solid #f3f3f3;
   transition: border 200ms ease-in-out;
+}
+
+form input:hover {
+  border: 2px solid #dfdfdf;
 }
 
 form input:focus {
   outline: none;
-  border: 1px solid #60dafb;
+  border: 2px solid #60dafb;
 }
 
 form .input-wrap {
   width: auto;
   margin: auto;
+}
+
+form .input--error input {
+  border-color: red;
 }
 
 .state-preview {

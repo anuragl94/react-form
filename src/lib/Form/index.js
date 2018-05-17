@@ -4,7 +4,10 @@ import { generateStateBindings } from './Utils'
 class Form extends Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+      _value: {},
+      _validity: {}
+    }
     this.generateStateBindings = generateStateBindings.bind(this)
   }
 }
