@@ -45,7 +45,6 @@ form .label-wrap {
   display: inline-block;
   font-weight: 400;
   margin-bottom: 8px;
-  padding-left: 8px;
   cursor: pointer;
 }
 
@@ -55,7 +54,6 @@ form input {
   font-family: inherit;
   font-weight: 300;
   border: 2px solid #f3f3f3;
-  transition: border 200ms ease-in-out;
 }
 
 form input:hover {
@@ -74,6 +72,12 @@ form .input-wrap {
 
 form .input--error input {
   border-color: red;
+}
+
+form .input--error .input-error-text {
+  color: red;
+  margin-top: 10px;
+  font-size: 0.8rem;
 }
 
 .state-preview {

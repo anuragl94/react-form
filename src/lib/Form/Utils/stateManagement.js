@@ -10,7 +10,7 @@ function getNestedObject (root, [...keys]) {
 }
 
 function updateNestedObject (root, [...keys], value) {
-  // TODO: Return a clone of root instead of modifying the original one
+  // TODO: Return a deep clone of root instead of modifying the original one
   if (!keys.length) {
     return value
   }

@@ -70,6 +70,9 @@ const InputWrapperHoC = function (Input) {
             <div className='input-wrap'>
               <div className={`input ${hasError ? 'input--error' : ''}`.trim()}>
                 <Input {...props} />
+                {hasError ? (
+                  <div className='input-error-text'>Something's not right</div>
+                ) : null}
               </div>
             </div>
           </label>
